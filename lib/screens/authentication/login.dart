@@ -3,6 +3,7 @@ import 'package:cred_assess/assets/colors.dart';
 import 'package:cred_assess/assets/logo.dart';
 import 'package:cred_assess/assets/navigation.dart';
 import 'package:cred_assess/screens/authentication/signin.dart';
+import 'package:cred_assess/screens/mainscreens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -48,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
             child: _buildChild(),
             style: ButtonStyle(backgroundColor: MaterialStateProperty.all(CustomColors.darkpurple,)),
             onPressed: () async {
-              Navigation.push(SigninPage(),
+              Navigation.push(MainScreen(),
                 context,
               );
             }

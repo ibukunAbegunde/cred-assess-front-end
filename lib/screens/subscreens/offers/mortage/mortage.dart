@@ -1,4 +1,6 @@
+import 'package:cred_assess/assets/navigation.dart';
 import 'package:cred_assess/screens/component/tiles.dart';
+import 'package:cred_assess/screens/subscreens/offers/mortage/mortageone.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -76,11 +78,19 @@ class _mortScreenState extends State<mortScreen> {
                     ],
                   ),
                 ),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0,),
+                  child: Image.asset(
+                    'images/Apartment.png',width: 250,
+                    // height: 300,
+                  ),
+                ),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Column(
                       children: <Widget>[
-                        tilesComponent(icon:'images/mort.png', title: 'Buying my first home', subtitle: 'Mortgages for your first property ', Ontap:(){},),
+                        tilesComponent(icon:'images/mort.png', title: 'Buying my first home', subtitle: 'Mortgages for your first property ', Ontap:(){Navigation.push(mortageOne(), context);},),
                         tilesComponent(icon:'images/mort.png', title: 'Moving or buying a new home', subtitle: 'Compare deals on a new mortgage', Ontap:(){},),
                         tilesComponent(icon:'images/mort.png', title: 'Remortgage', subtitle: 'Save money by switching mortgages', Ontap:(){},),
                       ],

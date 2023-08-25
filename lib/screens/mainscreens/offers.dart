@@ -1,7 +1,9 @@
 import 'package:cred_assess/screens/component/tiles.dart';
+import 'package:cred_assess/screens/subscreens/offers/car.dart';
 import 'package:cred_assess/screens/subscreens/offers/card/creditcard.dart';
-import 'package:cred_assess/screens/subscreens/offers/loan.dart';
-import 'package:cred_assess/screens/subscreens/offers/mortage.dart';
+import 'package:cred_assess/screens/subscreens/offers/insurance.dart';
+import 'package:cred_assess/screens/subscreens/offers/loan/loan.dart';
+import 'package:cred_assess/screens/subscreens/offers/mortage/mortage.dart';
 import 'package:cred_assess/screens/subscreens/offers/savings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -43,9 +45,9 @@ class _offerScreenState extends State<offerScreen> {
                       children: <Widget>[
                         tilesComponent(icon:'images/credit.png', title: 'Credit cards', subtitle: 'Credit card offers for you', Ontap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=> creditPage()));},),
                         tilesComponent(icon:'images/bag.png', title: 'Loans', subtitle: 'Short and long term loans available to you', Ontap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=> loanScreen()));},),
-                        tilesComponent(icon:'images/car.png', title: 'Car Finance', subtitle: 'Pay for your car in installments', Ontap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=> creditPage()));},),
+                        tilesComponent(icon:'images/car.png', title: 'Car Finance', subtitle: 'Pay for your car in installments', Ontap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=> carScreen()));},),
                         tilesComponent(icon:'images/piggy.png', title: 'Savings', subtitle: 'Find savings suitable to help grow your money', Ontap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=> savingsScreen()));},),
-                        tilesComponent(icon:'images/insure.png', title: 'Insurance', subtitle: 'Find great deals on health, life and car insurance', Ontap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=> creditPage()));},),
+                        tilesComponent(icon:'images/insure.png', title: 'Insurance', subtitle: 'Find great deals on health, life and car insurance', Ontap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=> insureScreen()));},),
                         tilesComponent(icon:'images/mort.png', title: 'Mortgages', subtitle: 'Find mortgages from leading lenders', Ontap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=> mortScreen()));},),
                         tilesComponent(icon:'images/bulb.png', title: 'Electricity', subtitle: 'Compare different electricity deals', Ontap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=> creditPage()));},),
                         tilesComponent(icon:'images/debt.png', title: 'Debt Consolidation', subtitle: 'Reduce your debts and save money', Ontap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=> creditPage()));},),

@@ -1,16 +1,17 @@
+import 'package:cred_assess/assets/navigation.dart';
 import 'package:cred_assess/screens/component/tiles.dart';
-import 'package:cred_assess/screens/subscreens/offers/card/creditcard.dart';
+import 'package:cred_assess/screens/subscreens/offers/mortage/mortageone.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class loanScreen extends StatefulWidget {
-  const loanScreen({super.key});
+class insureScreen extends StatefulWidget {
+  const insureScreen({super.key});
 
   @override
-  State<loanScreen> createState() => _loanScreenState();
+  State<insureScreen> createState() => _insureScreenState();
 }
 
-class _loanScreenState extends State<loanScreen> {
+class _insureScreenState extends State<insureScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -37,7 +38,7 @@ class _loanScreenState extends State<loanScreen> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 48.0),
-                        child: Text("Loans",textAlign: TextAlign.center,
+                        child: Text("Insurance",textAlign: TextAlign.center,
                           style: GoogleFonts.merriweather(textStyle: TextStyle(
                             color: Colors.black,
                             fontSize: 18,
@@ -55,7 +56,7 @@ class _loanScreenState extends State<loanScreen> {
                   child: Column(
                     children: [
                       Text(
-                        'Get a great loan deal that could save you thousands ',
+                        'Get a great Insurance deal that could save you thousands',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.black,
@@ -65,7 +66,7 @@ class _loanScreenState extends State<loanScreen> {
                         ),
                       ),
                       Text(
-                        'Compare loan rates from over 90 trusted lenders',
+                        'Explore Insurance Deals for Every Step of Your Journey',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFF757575),
@@ -77,10 +78,11 @@ class _loanScreenState extends State<loanScreen> {
                     ],
                   ),
                 ),
+
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0,),
                   child: Image.asset(
-                    'images/loann.png',
+                    'images/injury.png',width: 250,
                     // height: 300,
                   ),
                 ),
@@ -88,9 +90,10 @@ class _loanScreenState extends State<loanScreen> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: <Widget>[
-                        tilesComponent(icon:'images/bag.png', title: 'Student Loan', subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, ', Ontap:(){},),
-                        tilesComponent(icon:'images/bag.png', title: 'Car Loan', subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit,', Ontap:(){},),
-                        tilesComponent(icon:'images/bag.png', title: 'Personal Loan', subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, ', Ontap:(){},),
+                        tilesComponent(icon:'images/mort.png', title: 'Health Insurance', subtitle: 'Your health is your greatest wealth. Protect it with comprehensive health insurance.', Ontap:(){Navigation.push(mortageOne(), context);},),
+                        tilesComponent(icon:'images/mort.png', title: 'Car Insurance', subtitle: 'Protect your ride, protect your journey. Car insurance that goes the extra mile.', Ontap:(){},),
+                        tilesComponent(icon:'images/mort.png', title: 'Life Insurance', subtitle: 'protect what matters most with life insurance.', Ontap:(){},),
+                        tilesComponent(icon:'images/mort.png', title: 'House Insurance', subtitle: 'protect what matters most with life insurance.', Ontap:(){},),
                       ],
                     ),
                   ),

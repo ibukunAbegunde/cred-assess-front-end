@@ -1,3 +1,4 @@
+import 'package:cred_assess/screens/subscreens/credreport.dart';
 import 'package:flutter/material.dart';
 
 class moreScreen extends StatefulWidget {
@@ -10,6 +11,6 @@ class moreScreen extends StatefulWidget {
 class _moreScreenState extends State<moreScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return CircleProgressBar(percentage: 0.7,);
   }
 }

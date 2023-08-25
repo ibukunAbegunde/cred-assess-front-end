@@ -3,6 +3,7 @@ import 'package:cred_assess/assets/logo.dart';
 import 'package:cred_assess/assets/navigation.dart';
 import 'package:cred_assess/screens/authentication/login.dart';
 import 'package:cred_assess/screens/authentication/personalinfo.dart';
+import 'package:cred_assess/screens/subscreens/offers/card/card3.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -55,7 +56,7 @@ class _creditPageState extends State<creditPage> {
             child: _buildChild(),
             style: ButtonStyle(backgroundColor: MaterialStateProperty.all(CustomColors.darkpurple,)),
             onPressed: () async {
-              Navigation.push(PersonalInfoPage(),
+              Navigation.push(cardScreen(),
                 context,
               );
             }

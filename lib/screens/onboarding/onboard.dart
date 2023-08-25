@@ -30,7 +30,7 @@ class Onboarding extends StatelessWidget {
                 height: 17,
               ),
               SizedBox(
-                height: 59,
+                height: 49,
               ),
               Expanded(
                 child: Onbording(),
@@ -64,7 +64,7 @@ class Onboarding extends StatelessWidget {
                   ],
                 ),
               ),
-          Container(
+              Container(
             padding: const EdgeInsets.symmetric(vertical: 14),
             child: Row(
               children: [
@@ -85,7 +85,10 @@ class Onboarding extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
+              SizedBox(
+                height: 55,
+              ),
             ],
           ),
         ),

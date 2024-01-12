@@ -1,4 +1,4 @@
-package com.example.cred_assess
+package com.credassess.credassessadr
 
 import io.flutter.embedding.android.FlutterActivity
 

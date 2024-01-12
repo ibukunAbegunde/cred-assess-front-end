@@ -45,16 +45,17 @@ class _OnbordingState extends State<Onbording> {
                       padding: const EdgeInsets.symmetric(vertical: 8.0,),
                       child: Image.asset(
                         contents[i].image,
-                        // height: 300,
+                        height: 300,
                       ),
                     ),
-                    SizedBox(height: 40),
+                    SizedBox(height: 35),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0,),
+                      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 39),
                       child: Column(
                         children: [
                           Text(
                             contents[i].title,
+                            textAlign: TextAlign.center,
                             style:GoogleFonts.roboto(
                               textStyle:CustomColors.onboardtitle),
                           ),

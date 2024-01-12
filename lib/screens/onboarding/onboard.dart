@@ -18,7 +18,8 @@ class Onboarding extends StatelessWidget {
     return Scaffold(
       backgroundColor: CustomColors.white,
       body: SafeArea(
-        child: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -27,10 +28,10 @@ class Onboarding extends StatelessWidget {
                 height: 24,
               ),
               Logo(
-                height: 17,
+                height: 15,
               ),
               SizedBox(
-                height: 49,
+                height: 40,
               ),
               Expanded(
                 child: Onbording(),

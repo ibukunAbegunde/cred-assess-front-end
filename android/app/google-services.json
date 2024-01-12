@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "636359232965",
+    "project_id": "cred-assess-code-data-checks",
+    "storage_bucket": "cred-assess-code-data-checks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636359232965:android:ab05f72eeb09f52ac00fac",
+        "android_client_info": {
+          "package_name": "com.credassess.credassessadr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636359232965-3m00r5lh5e4bhidcrcisd31rhqcq4pfj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDblYMjTqLBLcj50T5JK47Fw_B5Nq4uCdA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636359232965-3m00r5lh5e4bhidcrcisd31rhqcq4pfj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "636359232965-v0vouicct34rfchmlr0sbt1a56cau36p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.credassess.credassess"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,6 +3,7 @@ import 'package:cred_assess/assets/logo.dart';
 import 'package:cred_assess/assets/navigation.dart';
 import 'package:cred_assess/screens/authentication/login.dart';
 import 'package:cred_assess/screens/authentication/personalinfo.dart';
+import 'package:cred_assess/services/auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -510,6 +511,7 @@ class _SigninPageState extends State<SigninPage> {
                     side: BorderSide(width: 1.0, color: Colors.black),
                   ),
                   onPressed: () {
+                    AuthServices().signInWithGoogle();
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),

@@ -1,41 +1,42 @@
 {
   "project_info": {
-    "project_number": "636359232965",
-    "project_id": "cred-assess-code-data-checks",
-    "storage_bucket": "cred-assess-code-data-checks.appspot.com"
+    "project_number": "393975009916",
+    "project_id": "cred-assess",
+    "storage_bucket": "cred-assess.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:636359232965:android:ab05f72eeb09f52ac00fac",
+        "mobilesdk_app_id": "1:393975009916:android:4040f771c7a9d11c40aff9",
         "android_client_info": {
-          "package_name": "com.credassess.credassessadr"
+          "package_name": "com.credassess.credassess"
         }
       },
       "oauth_client": [
         {
-          "client_id": "636359232965-3m00r5lh5e4bhidcrcisd31rhqcq4pfj.apps.googleusercontent.com",
+          "client_id": "393975009916-ene8h5g1fv2gvc42ns53fp39a66d2b91.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.credassess.credassess",
+            "certificate_hash": "de63bde055f439f29ac6d417e6968614ba48789e"
+          }
+        },
+        {
+          "client_id": "393975009916-f94b9npe5tuh6mdq750rlt13objsjt8p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDblYMjTqLBLcj50T5JK47Fw_B5Nq4uCdA"
+          "current_key": "AIzaSyBKO9u8VeLLgaIjb6CR316UgEpQhsTWyV0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "636359232965-3m00r5lh5e4bhidcrcisd31rhqcq4pfj.apps.googleusercontent.com",
+              "client_id": "393975009916-f94b9npe5tuh6mdq750rlt13objsjt8p.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "636359232965-v0vouicct34rfchmlr0sbt1a56cau36p.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.credassess.credassess"
-              }
             }
           ]
         }

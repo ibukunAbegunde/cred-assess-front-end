@@ -1,5 +1,7 @@
 import 'package:cred_assess/assets/colors.dart';
+import 'package:cred_assess/screens/subscreens/report/affordibility.dart';
 import 'package:cred_assess/screens/subscreens/report/creditReport.dart';
+import 'package:cred_assess/screens/subscreens/report/stabilityreport.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -144,8 +146,95 @@ class _reportScreenState extends State<reportScreen> {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 18.0),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> affordabilityScreen()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 18.0),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    padding:
+                                        const EdgeInsets.symmetric(vertical: 8.0),
+                                    decoration: ShapeDecoration(
+                                      color: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(
+                                          width: 0.50,
+                                          strokeAlign:
+                                              BorderSide.strokeAlignCenter,
+                                          color: Color(0xFFEFEFF4),
+                                        ),
+                                      ),
+                                    ),
+                                    child: Column(
+                                      children: <Widget>[
+                                        ListTile(
+                                          title: Text(
+                                            "Affordability Report",
+                                            style: GoogleFonts.merriweather(
+                                              textStyle: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 18,
+                                                fontFamily: 'Merriweather',
+                                                fontWeight: FontWeight.w700,
+                                                height: 1.60,
+                                              ),
+                                            ),
+                                          ),
+                                          subtitle: Text(
+                                              '2 Bank accounts linked to this account'),
+                                          trailing: Icon(
+                                            Icons.arrow_forward_ios,
+                                            size: 15,
+                                          ),
+                                        ),
+                                        ListTile(
+                                          title: Text('Zenith Bank'),
+                                          subtitle: Text('*****2345'),
+                                          leading: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Image.asset(
+                                                'images/zenith.png',
+                                                width: 40,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        ListTile(
+                                          title: Text('Wema Bank'),
+                                          subtitle: Text('*****2345'),
+                                          leading: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Image.asset(
+                                                'images/wema.png',
+                                                width: 40,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> stabiltyScreen()));
+                          },
                           child: Row(
                             children: [
                               Expanded(
@@ -157,8 +246,7 @@ class _reportScreenState extends State<reportScreen> {
                                     shape: RoundedRectangleBorder(
                                       side: BorderSide(
                                         width: 0.50,
-                                        strokeAlign:
-                                            BorderSide.strokeAlignCenter,
+                                        strokeAlign: BorderSide.strokeAlignCenter,
                                         color: Color(0xFFEFEFF4),
                                       ),
                                     ),
@@ -167,7 +255,7 @@ class _reportScreenState extends State<reportScreen> {
                                     children: <Widget>[
                                       ListTile(
                                         title: Text(
-                                          "Affordability Report",
+                                          "Stability  Report",
                                           style: GoogleFonts.merriweather(
                                             textStyle: TextStyle(
                                               color: Colors.black,
@@ -178,120 +266,44 @@ class _reportScreenState extends State<reportScreen> {
                                             ),
                                           ),
                                         ),
-                                        subtitle: Text(
-                                            '2 Bank accounts linked to this account'),
                                         trailing: Icon(
                                           Icons.arrow_forward_ios,
                                           size: 15,
                                         ),
                                       ),
-                                      ListTile(
-                                        title: Text('Zenith Bank'),
-                                        subtitle: Text('*****2345'),
-                                        leading: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Image.asset(
-                                              'images/zenith.png',
-                                              width: 40,
-                                            ),
-                                          ],
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 15),
+                                        child: Text(
+                                          'Lenders need to know and be able to confirm your residential address and employment status when deciding whether to lend you money',
+                                          style: TextStyle(
+                                            color: Color(0xFF9E9E9E),
+                                            fontSize: 14,
+                                            fontFamily: 'Avenir',
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.60,
+                                          ),
                                         ),
                                       ),
-                                      ListTile(
-                                        title: Text('Wema Bank'),
-                                        subtitle: Text('*****2345'),
-                                        leading: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Image.asset(
-                                              'images/wema.png',
-                                              width: 40,
-                                            ),
-                                          ],
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text('Learn More',style: TextStyle(
+                                                  color:  CustomColors.darkpurple, fontSize: 15)),
+                                              Icon(Icons.info_outline_rounded,color:  CustomColors.darkpurple,)
+                                            ],
+                                          ),
                                         ),
-                                      ),
+                                      )
                                     ],
                                   ),
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Container(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
-                                decoration: ShapeDecoration(
-                                  color: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    side: BorderSide(
-                                      width: 0.50,
-                                      strokeAlign: BorderSide.strokeAlignCenter,
-                                      color: Color(0xFFEFEFF4),
-                                    ),
-                                  ),
-                                ),
-                                child: Column(
-                                  children: <Widget>[
-                                    ListTile(
-                                      title: Text(
-                                        "Stability  Report",
-                                        style: GoogleFonts.merriweather(
-                                          textStyle: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 18,
-                                            fontFamily: 'Merriweather',
-                                            fontWeight: FontWeight.w700,
-                                            height: 1.60,
-                                          ),
-                                        ),
-                                      ),
-                                      trailing: Icon(
-                                        Icons.arrow_forward_ios,
-                                        size: 15,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 15),
-                                      child: Text(
-                                        'Lenders need to know and be able to confirm your residential address and employment status when deciding whether to lend you money',
-                                        style: TextStyle(
-                                          color: Color(0xFF9E9E9E),
-                                          fontSize: 14,
-                                          fontFamily: 'Avenir',
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.60,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text('Learn More',style: TextStyle(
-                                                color:  CustomColors.darkpurple, fontSize: 15)),
-                                            Icon(Icons.info_outline_rounded,color:  CustomColors.darkpurple,)
-                                          ],
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
                         ),
                       ],
                     ),

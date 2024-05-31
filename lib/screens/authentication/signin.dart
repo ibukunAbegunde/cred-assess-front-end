@@ -1,6 +1,8 @@
 import 'package:cred_assess/assets/colors.dart';
 import 'package:cred_assess/assets/logo.dart';
 import 'package:cred_assess/assets/navigation.dart';
+import 'package:cred_assess/assets/show_snackBar.dart';
+import 'package:cred_assess/providers/auth_controller.dart';
 import 'package:cred_assess/screens/authentication/login.dart';
 import 'package:cred_assess/screens/authentication/personalinfo.dart';
 import 'package:cred_assess/services/auth_services.dart';
@@ -16,10 +18,16 @@ class SigninPage extends StatefulWidget {
 
 class _SigninPageState extends State<SigninPage> {
 
+  final AuthController _authController = AuthController();
   GlobalKey<FormState> _key = new GlobalKey<FormState>();
 
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final privacyPolicy = true;
+  final firstName = TextEditingController();
+  final middleName = TextEditingController();
+  final lastName = TextEditingController();
+  final email = TextEditingController();
+  final password = TextEditingController();
+  GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
   late bool _passwordVisible;
   bool _isLoading = false;
   Size size = WidgetsBinding.instance.window.physicalSize;
@@ -34,29 +42,36 @@ class _SigninPageState extends State<SigninPage> {
 
 
   ///-----------------------------------
-  ///login buton
+  ///Register User
   ///---------------------------------
-  Widget _submitButton() {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8),
-      alignment: Alignment.center,
-      decoration: const BoxDecoration(
-          color: CustomColors.darkpurple,
-          borderRadius: BorderRadius.all(Radius.circular(8))),
+  _signUpUser() async {
+    setState(() {
+      _isLoading = true;
+    });
 
-      child: Expanded(
-        child: TextButton(
+    if (_key.currentState!.validate()) {
 
-            child: _buildChild(),
-            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(CustomColors.darkpurple,)),
-            onPressed: () async {
-              Navigation.push(PersonalInfoPage(),
-                context,
-              );
-            }
-        ),
-      ),
-    );
+        await _authController
+            .signUpUSers(firstName.text.trim(),middleName.text.trim(),lastName.text.trim(),email.text.trim(),password.text.trim())
+            .whenComplete((){
+          setState(() {
+            _key.currentState!.reset();
+            _isLoading = false;
+          });
+        });
+        setState(() {
+          _isLoading = false;
+        });
+        return showSnack(
+            context, 'Congratulations Account has been Created For You', 1500);
+
+    } else {
+      setState(() {
+        _isLoading = false;
+      });
+      return showSnack(
+          context, 'Please fill in the input fields correctly', 1500);
+    }
   }
 
   ///-----------------------------------
@@ -156,6 +171,7 @@ class _SigninPageState extends State<SigninPage> {
               ),
               TextFormField(
                 cursorColor: CustomColors.primaryBlue,
+                controller: firstName,
                 style:TextStyle(
                     color: Colors.white, fontFamily: 'SFUIDisplay'),
                 decoration: InputDecoration(
@@ -209,6 +225,7 @@ class _SigninPageState extends State<SigninPage> {
               ),
               TextFormField(
                 cursorColor: CustomColors.primaryBlue,
+                controller: middleName,
                 style:TextStyle(
                     color: Colors.white, fontFamily: 'SFUIDisplay'),
                 decoration: InputDecoration(
@@ -262,6 +279,7 @@ class _SigninPageState extends State<SigninPage> {
               ),
               TextFormField(
                 cursorColor: CustomColors.primaryBlue,
+                controller: lastName,
                 style:TextStyle(
                     color: Colors.white, fontFamily: 'SFUIDisplay'),
                 decoration: InputDecoration(
@@ -315,6 +333,7 @@ class _SigninPageState extends State<SigninPage> {
               ),
               TextFormField(
                 cursorColor: CustomColors.primaryBlue,
+                controller: email,
                 style:TextStyle(
                     color: Colors.white, fontFamily: 'SFUIDisplay'),
                 decoration: InputDecoration(
@@ -368,6 +387,7 @@ class _SigninPageState extends State<SigninPage> {
               ),
               TextFormField(
                 cursorColor: CustomColors.primaryBlue,
+                controller: password,
                 style:TextStyle(
                     color: Colors.white, fontFamily: 'SFUIDisplay'),
                 decoration: InputDecoration(
@@ -499,7 +519,24 @@ class _SigninPageState extends State<SigninPage> {
                     ],
                   ),
         ),
-        _submitButton(),
+        Container(
+          margin: const EdgeInsets.symmetric(vertical: 8),
+          alignment: Alignment.center,
+          decoration: const BoxDecoration(
+              color: CustomColors.darkpurple,
+              borderRadius: BorderRadius.all(Radius.circular(8))),
+
+          child: Expanded(
+            child: TextButton(
+
+                child: _buildChild(),
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(CustomColors.darkpurple,)),
+                onPressed: () async {
+                  _signUpUser();
+                }
+            ),
+          ),
+        ),
         Center(child: Text('Or'),),
         Row(
           children: [

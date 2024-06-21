@@ -8,13 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
-class LoginPage extends StatefulWidget {
-  LoginPage({Key? key}) : super(key: key);
-  @override
-  _LoginPageState createState() => _LoginPageState();
-}
 
-class _LoginPageState extends State<LoginPage> {
+class LoginPage extends StatelessWidget {
 
   GlobalKey<FormState> _key = new GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
@@ -23,13 +18,6 @@ class _LoginPageState extends State<LoginPage> {
   bool _isLoading = false;
   Size size = WidgetsBinding.instance.window.physicalSize;
 
-  @override
-  void initState() {
-    super.initState();
-    _passwordVisible = false;
-
-
-  }
 
 
   ///-----------------------------------

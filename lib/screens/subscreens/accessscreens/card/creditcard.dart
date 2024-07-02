@@ -1,7 +1,7 @@
 import 'package:cred_assess/assets/colors.dart';
 import 'package:cred_assess/assets/logo.dart';
 import 'package:cred_assess/assets/navigation.dart';
-import 'package:cred_assess/screens/authentication/login.dart';
+import 'package:cred_assess/screens/authentication/login/login.dart';
 import 'package:cred_assess/screens/authentication/personalinfo.dart';
 import 'package:cred_assess/screens/subscreens/offers/card/card3.dart';
 import 'package:flutter/material.dart';
